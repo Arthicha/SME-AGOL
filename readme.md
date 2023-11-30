@@ -1,6 +1,8 @@
 # SME-AGOL: Sequential Motion Executor - Added Gradient-weighting Online Learning
 
-
+<p align="center">
+    <img width="75%" src="/pictures/simulation.PNG" />
+</p>
 
 # Contents
 - [Requirements](#Requirements)
@@ -20,10 +22,6 @@
 # Running
 
 1. Open the CoppeliaSim scene locating at `simulation/MORF_BasicLocomotionLearning`
-
-<p align="center">
-    <img width="75%" src="/pictures/simulation.PNG" />
-</p>
 
 2. In order to start the training, just run the following command:
 
