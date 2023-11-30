@@ -1,5 +1,7 @@
 # SME-AGOL: Sequential Motion Executor - Added Gradient-weighting Online Learning
 
+The video of the experiments are available at [https://youtu.be/XCI1opte-VA](https://youtu.be/XCI1opte-VA)
+
 <p align="center">
     <img width="75%" src="/pictures/simulation.PNG" />
 </p>
@@ -17,7 +19,6 @@
 * python 3.6.5
 	- numpy 1.19.5 (at least)
 	- pytorch 1.5.0+cu92 (at least)
-
  
 # Running
 
