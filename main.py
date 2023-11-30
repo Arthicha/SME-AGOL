@@ -9,7 +9,6 @@ import configparser
 # math-related modules
 import numpy as np # cpu array
 import torch # cpu & gpu array
-import matplotlib.pyplot as plt
 
 # simulation
 from interface.vrepinterfaze import VrepInterfaze
@@ -23,7 +22,6 @@ from utils.utils import TorchReplay as Replay
 # control variable
 NREPLAY = 8
 NTIMESTEP = 30
-HORIZON = 15
 RESET = True
 
 def numpy(x):
@@ -33,7 +31,6 @@ def tensor(x):
 	return torch.FloatTensor(x).to(torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu'))
 
 def get_reward(speed):
-	global HORIZON
 	speed_flip = torch.flip(speed,dims=[1])
 	speed_fliptilend = torch.cumsum(speed_flip,dim=1)
 	speed_tilend = torch.flip(speed_fliptilend,dims=[1])
