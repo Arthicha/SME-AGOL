@@ -44,5 +44,5 @@ python main.py
 |  | RESET | enable simulation/network reset | 
 |  |  | (reset the simulation and the network after each episode ends) | 
 
-4. Enjoy! With a proper set of hyperparameters, the robot should start walking within the ifrst 30 episodes.
+4. Enjoy! With a proper set of hyperparameters, the robot should start walking within the first 40 episodes.
 
