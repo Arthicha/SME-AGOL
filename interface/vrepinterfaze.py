@@ -46,7 +46,6 @@ class VrepInterfaze:
 		self.__ip = ip
 		self.__port = port
 		self.__clientID = sim.simxStart(self.__ip,self.__port,True,True,5000,5) # Connect to CoppeliaSim
-		
 
 		# robot handle
 		_, self.__robot_ref_handle = sim.simxGetObjectHandle(self.__clientID,'morf_ref',MODE)
@@ -77,18 +76,11 @@ class VrepInterfaze:
 		pose = np.array([posarray[0],posarray[1],posarray[2],orienarray[0],orienarray[1],orienarray[2]])
 		return self.__redo(status,pose,self.get_robot_pose)
 
-	def get_joint_position(self):
-		positions = np.zeros((6,3))
-		for l in range(0,6):
-			status, positions[l,:] = sim.simxGetObjectPosition(self.__clientID,self.__joint_handle[l,0],self.__floor_handle,MODE)
-		return self.__redo(status,positions,self.get_joint_position)
-
 	def get_jointangle(self):
 		positions = np.zeros((18))
 		for l in range(0,6):
 			for j in range(0,3):
 				status, positions[3*l+j] = sim.simxGetJointPosition(self.__clientID,self.__joint_handle[l,j],MODEF)
-		
 		return self.__redo(status,positions,self.get_jointangle)
 
 

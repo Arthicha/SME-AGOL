@@ -59,7 +59,13 @@ class SequentialMotionExecutor(torchNet):
 
 		self.zpg = SequentialCentralPatternGenerator(self.__hyperparams)
 		self.bfn = BasisNetwork(self.__hyperparams) 
-		self.mn = MotorNetwork(self.__hyperparams,outputgain=[float(gain) for gain in list((config['MN']['GAIN']).split(","))])
+		self.mn = MotorNetwork(self.__hyperparams,
+			outputgain=[float(gain) for gain in list((config['MN']['GAIN']).split(","))],
+			activation='tanh')
+
+		valueparams = deepcopy(self.__hyperparams)
+		valueparams.n_out = 1
+		self.vn = MotorNetwork(valueparams,None,activation='identity')
 
 		# ---------------------- initialize neuron activity ------------------------ 
 		self.__state = self.zeros(1,self.__n_state)

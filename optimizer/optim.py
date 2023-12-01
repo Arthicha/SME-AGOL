@@ -35,7 +35,6 @@ class Optim:
 		self.W = weight
 		config = configparser.ConfigParser()
 		config.read(configfile)
-		self.lr = float(config["HYPERPARAM"]["LR"])
 
 		# reset everything before use
 		self.setup(config)

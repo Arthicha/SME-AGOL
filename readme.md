@@ -1,6 +1,6 @@
 # SME-AGOL: Sequential Motion Executor - Added Gradient-weighting Online Learning
 
-The video of the experiments are available at [https://youtu.be/XCI1opte-VA](https://youtu.be/XCI1opte-VA)
+The video is available at [https://youtu.be/XCI1opte-VA](https://youtu.be/XCI1opte-VA).
 
 <p align="center">
     <img width="75%" src="/pictures/simulation.PNG" />
@@ -40,8 +40,9 @@ python main.py
 |  | SIGMA | starting exploration standard deviation (between 0.001-0.05)|
 | main.py | NREPLAY | number of episodes/roll-outs used |
 |  | NTIMESTEP | number of timesteps per episode | 
+|  | NEPISODE | number of episode used for learning | 
 |  | RESET | enable simulation/network reset | 
 |  |  | (reset the simulation and the network after each episode ends) | 
 
-
+4. Enjoy! With a proper set of hyperparameters, the robot should start walking within the ifrst 30 episodes.
 

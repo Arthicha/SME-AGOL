@@ -19,7 +19,7 @@ class MotorNetwork(torchNet):
 	# -------------------- constructor -----------------------
 	# (private)
 
-	def __init__(self,hyperparams,load=0,outputgain=None,bias=False):
+	def __init__(self,hyperparams,load=0,outputgain=None, activation='identity'):
 
 		# initialize network hyperparameter
 		super().__init__()
@@ -32,6 +32,7 @@ class MotorNetwork(torchNet):
 
 		self.__n_state = hyperparams.n_state
 		self.__n_out = hyperparams.n_out
+		self.__activation = activation	
 
 		# initialize connection weight
 		self.W = self.zeros(self.__n_state,self.__n_out,grad=True)
@@ -57,7 +58,12 @@ class MotorNetwork(torchNet):
 		pass
 
 	def forward(self,x):
-		outputs = torch.tanh((x@self.Wn)*self.__output_gain)
+		activity = (x@self.Wn)*self.__output_gain
+		if self.__activation is 'tanh':
+			outputs = torch.tanh(activity)
+		else:
+			outputs = activity
+
 		return outputs
 
 
