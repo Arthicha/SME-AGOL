@@ -15,7 +15,7 @@ from optim import Optim
 
 # ------------------- configuration variables ---------------------
 EPS = 1e-6
-ENDINGCLIP = 5 # throw away n-last timestep
+ENDINGCLIP = 5 # trow away n-last timestep
 
 # ------------------- class AddedGradientOnlineLearning ---------------------
 class AddedGradientOnlineLearning(Optim):

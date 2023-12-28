@@ -95,7 +95,7 @@ for i in range(NEPISODE):
 		dx = pose[0]-prepose[0]
 		dy = pose[1]-prepose[1]
 		reward = dx - np.abs(dy)
-		propose = deepcopy(pose)
+		prepose = deepcopy(pose)
 
 		# backpropagate output gradient
 		torch.sum(output).backward() 
