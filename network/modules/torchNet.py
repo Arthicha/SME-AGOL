@@ -13,8 +13,6 @@ torch-based neural network, a template for other neural modules
 # standard modules
 import time, sys, os
 from copy import deepcopy
-import colorama 
-from colorama import Fore
 
 # math-related modules
 import numpy as np # cpu array

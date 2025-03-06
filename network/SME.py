@@ -97,7 +97,13 @@ class SequentialMotionExecutor(torchNet):
 			return self.outputs.detach().cpu().numpy()[0,:3]
 
 	def explore(self,wnoise):
+		
 		self.mn.Wn = self.mn.W + wnoise
+
+	def zero_grad(self):
+		with torch.no_grad():
+			self.mn.W.grad = None
+			self.mn.Wn.grad = None
 
 	# ---------------------- update   ------------------------
 

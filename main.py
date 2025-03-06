@@ -94,10 +94,11 @@ for i in range(NEPISODE):
 		pose = vrep.get_robot_pose()
 		dx = pose[0]-prepose[0]
 		dy = pose[1]-prepose[1]
-		reward = dx - np.abs(dy)
+		reward = dx*np.cos(prepose[-1]) + dy*np.sin(prepose[-1]) 
 		prepose = deepcopy(pose)
 
 		# backpropagate output gradient
+		sme.zero_grad()
 		torch.sum(output).backward() 
 
 		# append experience replay
