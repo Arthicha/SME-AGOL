@@ -23,7 +23,7 @@ from utils.utils import TorchReplay as Replay
 NREPLAY = 8
 NTIMESTEP = 30
 NEPISODE = 10000
-RESET = True
+RESET = False
 CONNECTION = torch.FloatTensor(np.array([[0,1,0,0],[0,0,1,0],[0,0,0,1],[1,0,0,0]])).cuda()
 
 # ------------------- auxiliary functions ---------------------
