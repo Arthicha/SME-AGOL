@@ -46,3 +46,8 @@ python main.py
 
 4. Enjoy! With a proper set of hyperparameters, the robot should start walking within the first 40 episodes.
 
+
+
+Reference:
+
+Arthicha Srisuchinnawong and Poramate Manoonpong. "An Interpretable Neural Control Network with Adaptable Online Learning for Sample Efficient Robot Locomotion Learning." arXiv preprint arXiv:2501.10698 (2025).
